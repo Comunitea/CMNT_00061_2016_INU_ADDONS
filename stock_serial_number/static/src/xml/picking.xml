@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © 2016 Comunitea
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<templates id="template" xml:space="preserve">
+    <t t-extend="PickingEditorWidget" >
+        <t t-jquery="#js_LotChooseModal" t-operation="after">
+            <div class="modal fade" id="js_SerialNumber" tabindex="-1" role="dialog" aria-labelledby="SerialNumber" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                            <h4 class="modal-title" id="myModalLabel">Assign serial numbers</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Serial number</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td><input type="text" class="form-control text-center serial_number"/></td></tr>
+                                    <tr><td><input type="text" class="form-control text-center serial_number"/></td></tr>
+                                    <tr><td><input type="text" class="form-control text-center serial_number"/></td></tr>
+                                    <input type="hidden" name="use_packop_id"/>
+                                </tbody>
+
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary js_send_serial_number">Assign serial numbers</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-jquery=".btn-group ul" t-operation="append">
+            <!-- TODO: Buscar modo de añadir t-if para que solo se muestre en productos con check use_serial_number-->
+            <li><a class="js_assign_serial_number" t-att-data-id="row.cols.id" href="#">Assign serial number</a></li>
+        </t>
+    </t>
+</templates>
