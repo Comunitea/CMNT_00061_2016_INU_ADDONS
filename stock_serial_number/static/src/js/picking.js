@@ -6,6 +6,7 @@ openerp.stock_serial_number = function(instance){
             var self = this
             this._super();
             this.$('.js_assign_serial_number').click(function(event){
+                // debugger;
                 var $ship_modal = self.$el.siblings('#js_SerialNumber');
                 $ship_modal.modal();
                 $('#js_SerialNumber input[name="use_packop_id"]').val($(event.target).attr('data-id'))
@@ -25,8 +26,12 @@ openerp.stock_serial_number = function(instance){
                         new_input.focusout(arguments.callee);
                         $('#js_SerialNumber table tbody').append($('<tr>').append($('<td>').append(new_input)))
                     }
+                    // debugger;
                 });
-                $('.js_send_serial_number').click(function(){
+                
+            });
+            this.$('.js_send_serial_number').click(function(){
+                    var $ship_modal = self.$el.siblings('#js_SerialNumber');
                     var serial_numbers = $('#js_SerialNumber input.serial_number').map(function(idx, elem) {return $(elem).val()});
                     var final_serial_numbers = []
                     for (var i = 0; i < serial_numbers.length; i++) {
@@ -37,10 +42,10 @@ openerp.stock_serial_number = function(instance){
                     var packop_id = $('#js_SerialNumber input[name="use_packop_id"]').val();
                     new instance.web.Model('stock.pack.operation').call(
                         'set_serial_numbers', [[parseInt(packop_id)], final_serial_numbers]);
-
+                    var $ship_modal = self.$el.siblings('#js_SerialNumber');
+                    $ship_modal.modal('hide')
+                    // TODO: Llamar a la funcion refresh_ui con el picking_id ???
                 });
-                // TODO: Llamar a la funcion refresh_ui con el picking_id.
-            });
         },
 
     });
