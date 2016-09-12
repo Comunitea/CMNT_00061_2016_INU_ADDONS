@@ -10,6 +10,10 @@ class StockPackOperation(models.Model):
     _inherit = 'stock.pack.operation'
 
     serial_numbers_str = fields.Char(size=512, readonly=True)
+    # Para que el cliente web pueda leer este atributo en la operación
+    use_serial_number = fields.Boolean('Use serial number',
+                                       related="product_id.use_serial_number",
+                                       readonly=True)
 
     @api.multi
     def set_serial_numbers(self, serial_numbers):
