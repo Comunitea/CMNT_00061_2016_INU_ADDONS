@@ -18,7 +18,6 @@ class StockPackOperation(models.Model):
             TODO: Tal vez fallaria si la cantidad de numeros de serie es igual
             a la cantidad de la operacion
         """
-        import ipdb; ipdb.set_trace()
         serial_numbers_str = ''
         lots = []
         for serial_number in serial_numbers:
@@ -42,7 +41,6 @@ class StockPicking(models.Model):
 
     @api.multi
     def do_transfer(self):
-        import ipdb; ipdb.set_trace()
         for pick in self:
             for operation in pick.pack_operation_ids:
                 if operation.serial_numbers_str:
@@ -52,7 +50,8 @@ class StockPicking(models.Model):
                     while serial_numbers_ids:
                         lot_id = serial_numbers_ids.pop()
                         vals = {'qty_done': 1, 'lot_id': lot_id,
-                                'serial_numbers_str': ''}
+                                'serial_numbers_str': '',
+                                'product_qty': 1}
                         operation.with_context(no_recumpute=True).copy(vals)
                     operation.unlink()
         return super(StockPicking, self).do_transfer()
