@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+    <template id="report_invoice_document_custom" inherit_id="cmnt_custom_reports.report_invoice_document_custom">
+
+            <!-- Quito unidad de medida y alineo cantidad a la derecha-->
+            <xpath expr="//table[1]/tbody/tr/td[2]" position="replace">
+                <td class="text-right" > 
+                    <span t-field="l.quantity"/>
+                </td>
+            </xpath>
+
+            <!-- Quito columna impuestos -->
+            <xpath expr="//table[1]/thead/tr/th[5]" position="replace">
+            </xpath>
+
+            <xpath expr="//table[1]/tbody/tr/td[5]" position="replace">
+            </xpath>
+
+            <!-- Pongo IVA 21% en lugar de impuestos -->
+<!--             <xpath expr="//div[@class='col-xs-4 pull-right']/table/tr[2]" position="replace">
+                <tr>
+                    <td>TAX 21 %</td>
+                    <td class="text-right">
+                        <span t-field="o.amount_tax" t-field-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
+                    </td>
+                </tr>
+            </xpath> -->
+
+            <!-- Elimino el desglose de impuestos -->
+<!--             <xpath expr="//div[@t-if='o.tax_line']" position="replace">
+            </xpath> -->
+
+        </template>
+  </data>
+</openerp>
