@@ -17,8 +17,8 @@ msgstr ""
 
 #. module: inusual_custom_documents
 #: view:website:account.report_invoice_document
-msgid "Desccription"
-msgstr "Desccripción"
+msgid "Description"
+msgstr "Descripción"
 
 #. module: inusual_custom_documents
 #: view:website:account.report_invoice_document
