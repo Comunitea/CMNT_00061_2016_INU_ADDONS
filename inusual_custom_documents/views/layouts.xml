@@ -5,7 +5,14 @@
         <template id="inusual_external_layout_footer" inherit_id="report.external_layout_footer">
              <xpath expr="//div" position="attributes">
                 <attribute name="class">footer</attribute>
-                <attribute name="style">font-size:10px;</attribute>
+                <attribute name="style">font-size:9px;</attribute>
+            </xpath>
+        </template>
+
+        <!-- Separación logo y raya -->
+        <template id="inusual_external_layout_header" inherit_id="report.external_layout_header">
+             <xpath expr="//img" position="after">
+                <span><br/><br/></span>
             </xpath>
         </template>
      </data>

@@ -32,6 +32,36 @@
 <!--             <xpath expr="//div[@t-if='o.tax_line']" position="replace">
             </xpath> -->
 
+            <!-- Campos fijos de 3 columnas y separador encima -->
+            <xpath expr="//div[@class='row mt32 mb32']" position="replace">
+                <table class="table table-condensed">
+                    <thead>
+                        <tr>
+                            <th><strong>Desccription</strong></th>
+                            <th><strong>Source</strong></th>
+                            <th><strong>Invoice Date</strong></th>
+                            <th name="td_sched_date_h"><strong>Reference</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span t-field="o.name"/>
+                            </td>
+                            <td>
+                                <span t-field="o.origin"/>
+                            </td>
+                            <td>
+                                <span t-field="o.date_invoice"/>
+                            </td>
+                            <td>
+                                <span t-field="o.reference"/>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </xpath>
+
         </template>
   </data>
 </openerp>
