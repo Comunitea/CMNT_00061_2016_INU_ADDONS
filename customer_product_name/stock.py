@@ -34,7 +34,8 @@ class stock_move(models.Model):
     @api.depends('product_id', 'partner_id')
     def _get_product_name(self):
         if self.product_id:
-            self.product_name = self.product_id.get_product_ref(self.partner_id)
+            self.product_name = self.product_id.get_product_complete_name(
+                self.partner_id)
         else:
             self.product_name = ''
 
@@ -50,5 +51,5 @@ class stock_pack_operation(models.Model):
     @api.one
     @api.depends('product_id', 'picking_id.partner_id')
     def _get_product_name(self):
-        self.product_name = self.product_id.get_product_ref(
+        self.product_name = self.product_id.get_product_complete_name(
             self.picking_id.partner_id)

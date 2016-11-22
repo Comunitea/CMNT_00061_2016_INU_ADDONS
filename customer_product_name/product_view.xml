@@ -10,6 +10,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="customer_id"/>
+                <field name="code"/>
                 <field name="name"/>
             </tree>
         </field>
@@ -23,6 +24,7 @@
             <form>
                 <group>
                     <field name="customer_id" domain="[('customer', '=', True), ('parent_id', '=', False)]"/>
+                    <field name="code"/>
                     <field name="name"/>
                 </group>
             </form>

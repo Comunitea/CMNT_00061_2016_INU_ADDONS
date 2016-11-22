@@ -48,10 +48,13 @@ class SaleOrderLine(models.Model):
                                                           context)
         partner = self.pool.get('res.partner').browse(cr, uid, partner_id,
                                                       context)
-        ref = '[' + product.default_code + '] ' if product.default_code else ''
-        new_name = product.get_product_ref(partner)
-        if not new_name:
-            new_name = product.name
-        res['value']['name'] = ref + new_name
+
+        code, name = product.get_product_ref(partner)
+        if not name:
+            name = product.name
+        if not code:
+            code = product.default_code or ''
+        ref = '[' + code + '] ' if code else ''
+        res['value']['name'] = ref + name
 
         return res
