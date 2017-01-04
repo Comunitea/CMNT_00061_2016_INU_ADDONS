@@ -19,6 +19,7 @@
     "data": [
         "views/report_invoice.xml",
         "views/layouts.xml",
+        "views/manufacturing_order.xml",
     ],
     "demo": [
     ],
