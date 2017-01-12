@@ -47,14 +47,14 @@ class MrpRepair(models.Model):
 
 
     @api.multi
-    def button_add_repair_task(self): 
+    def button_add_repair_task(self):
         task_obj = self.env['project.task']
         for record in self:
             task_domain = [('mrp_repair_id', '=', record.id),
                            ('workorder', '=', False)]
             tasks = task_obj.search(task_domain)
             if not tasks:
-                task_obj.create(self._prepare_repair_task(record))        
+                task_obj.create(self._prepare_repair_task(record))
         # return super(MrpRepair, self).button_add_repair_task()
 
 
@@ -68,6 +68,13 @@ class MrpRepair(models.Model):
                 project = project_obj.create(project_vals)
                 repair.project_id = project.id
         return result
+
+    @api.multi
+    def action_repair_start(self):
+        res = super(MrpRepair, )
+        for repair in self:
+            repair. button_add_repair_task()
+        return res
 
 
 '''

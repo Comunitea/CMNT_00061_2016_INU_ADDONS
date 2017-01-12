@@ -26,7 +26,7 @@
        
           
         
-        <record model="ir.ui.view" id="mrp_repair_order_form_new_task_button">
+<!--         <record model="ir.ui.view" id="mrp_repair_order_form_new_task_button">
 			<field name="name">mrp.repair.project.inh.form</field>
             <field name="model">mrp.repair</field>
             <field name="inherit_id" ref="mrp_repair.view_repair_order_form" />
@@ -37,7 +37,7 @@
             </field> 
         </record>
         
-        
+         -->
              
         
         
