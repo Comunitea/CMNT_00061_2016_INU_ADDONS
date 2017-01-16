@@ -22,25 +22,20 @@
             </field>
         </record>
         
-        
-       
+             
           
-        
+        <!-- sustituyo botón "iniciar reparación" por "añadir tarea e iniciar reparación"-->
         <record model="ir.ui.view" id="mrp_repair_order_form_new_task_button">
 			<field name="name">mrp.repair.project.inh.form</field>
             <field name="model">mrp.repair</field>
             <field name="inherit_id" ref="mrp_repair.view_repair_order_form" />
             <field name="arch" type="xml">
-               <xpath expr="//button[@name='repair_ready']" position="before">
-				    <button name="button_add_repair_task" states="confirmed,ready" string="Add Repair Task" class="oe_highlight"  type="object"/>					
+               <xpath expr="//button[@name='repair_ready']" position="replace">
+				    <button name="button_add_repair_task" states="confirmed,ready" string="Add Repair Task and Start Repair" class="oe_highlight"  type="object"/>					
                </xpath> 
             </field> 
         </record>
-        
-        
-             
-        
-        
+
 
         <record id="act_project_2_repair_all" model="ir.actions.act_window">
             <field name="name">Repair Orders</field>
