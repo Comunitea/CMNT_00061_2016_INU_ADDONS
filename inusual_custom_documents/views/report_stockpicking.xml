@@ -14,6 +14,12 @@
                     <span t-field="o.sale_id.client_order_ref"/>
                 </td>
             </xpath>
+            <xpath expr="//div[@class='page']" position="inside">
+                <p t-if="o.comments" class="text-justify">
+                    <strong>Comments: </strong><br/>
+                    <span t-field="o.comments"/>
+                </p>
+            </xpath>
         </template>
 
     </data>
