@@ -21,7 +21,6 @@
         "views/layouts.xml",
         "views/manufacturing_order.xml",
         "views/stock_picking.xml",
-        "views/sale_order_tree.xml",
     ],
     "demo": [
     ],
