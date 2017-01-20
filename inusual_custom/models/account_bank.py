@@ -2,7 +2,7 @@
 # © 2017 Comunitea
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, exceptions, _
+from openerp import models, api
 
 
 class AccountBankStatementLine(models.Model):
@@ -11,4 +11,4 @@ class AccountBankStatementLine(models.Model):
 
     @api.onchange('statement_id')
     def onchange_statement_id(self):
-        seflf.date = self.statement_id.date
+        self.date = self.statement_id.date
