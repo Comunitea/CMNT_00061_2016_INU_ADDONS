@@ -47,8 +47,8 @@ class MrpRepair(models.Model):
 
 
     @api.multi
-    def button_add_repair_task(self):
-        task_obj = self.env['project.task']
+    def button_add_repair_task(self): 
+        task_obj = self.env['project.task']        
         for record in self:
             task_domain = [('mrp_repair_id', '=', record.id),
                            ('workorder', '=', False)]
@@ -56,6 +56,7 @@ class MrpRepair(models.Model):
             if not tasks:
                 task_obj.create(self._prepare_repair_task(record))
         # return super(MrpRepair, self).button_add_repair_task()
+	
 
 
     @api.multi  
@@ -75,6 +76,7 @@ class MrpRepair(models.Model):
         for repair in self:
             repair. button_add_repair_task()
         return res
+
 
 
 '''

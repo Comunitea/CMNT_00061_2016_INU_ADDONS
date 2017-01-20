@@ -22,6 +22,7 @@
         "views/report_stockpicking.xml",
         "views/layouts.xml",
         "views/manufacturing_order.xml",
+        "views/stock_picking.xml",
     ],
     "demo": [
     ],
