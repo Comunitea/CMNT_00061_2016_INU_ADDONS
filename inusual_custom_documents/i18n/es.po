@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* inusual_custom_documents
+#   * inusual_custom_documents
 #
 msgid ""
 msgstr ""
@@ -60,3 +60,7 @@ msgstr "font-size:9px;"
 msgid "footer"
 msgstr "footer"
 
+#. module: inusual_custom_documents
+#: view:website:stock.report_picking
+msgid "Your reference"
+msgstr "Su referencia"
