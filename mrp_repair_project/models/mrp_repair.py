@@ -55,7 +55,6 @@ class MrpRepair(models.Model):
             tasks = task_obj.search(task_domain)
             if not tasks:
                 task_obj.create(self._prepare_repair_task(record))
-                self.state = 'under_repair' # cambio de estado de la reparación
         # return super(MrpRepair, self).button_add_repair_task()
 	
 
@@ -70,6 +69,13 @@ class MrpRepair(models.Model):
                 project = project_obj.create(project_vals)
                 repair.project_id = project.id
         return result
+
+    @api.multi
+    def action_repair_start(self):
+        res = super(MrpRepair, )
+        for repair in self:
+            repair. button_add_repair_task()
+        return res
 
 
 
