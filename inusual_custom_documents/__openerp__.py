@@ -11,6 +11,7 @@
     'depends': [
         'base',
         'cmnt_custom_reports',
+        'stock_picking_valued'
     ],
     'contributors': [
         "Comunitea ",
@@ -18,8 +19,11 @@
     ],
     "data": [
         "views/report_invoice.xml",
+        "views/report_stockpicking.xml",
         "views/layouts.xml",
         "views/manufacturing_order.xml",
+        "views/stock_picking.xml",
+        "views/report_saleorder.xml"
     ],
     "demo": [
     ],

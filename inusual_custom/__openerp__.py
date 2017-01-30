@@ -10,6 +10,8 @@
     'license': 'AGPL-3',
     'depends': [
         'base',
+        'account',
+        'sale'
     ],
     'contributors': [
         "Comunitea ",
@@ -17,6 +19,7 @@
     ],
     "data": [
         "views/res_partner_view.xml",
+        "views/sale_order_tree.xml",
     ],
     "demo": [
     ],
