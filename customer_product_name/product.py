@@ -61,6 +61,7 @@ class product_product(models.Model):
 
     def get_product_complete_name(self, partner):
         code = False
+        name = False
         if not partner:
             return self.default_code or ''
         if isinstance(partner, (int, long)):
