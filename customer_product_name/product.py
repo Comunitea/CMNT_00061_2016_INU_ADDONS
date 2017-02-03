@@ -60,8 +60,8 @@ class product_product(models.Model):
                                                      custom_prod[0].name or ''
 
     def get_product_complete_name(self, partner):
-        code = False
-        name = False
+        code = self.default_code
+        name = self.name
         if not partner:
             return self.default_code or ''
         if isinstance(partner, (int, long)):
@@ -74,7 +74,7 @@ class product_product(models.Model):
                 [('product_id', '=', self.id), ('customer_id', '=',
                                                 top_partner_id)])
 
-            code = custom_prod and custom_prod[0].code or self.code
+            code = custom_prod and custom_prod[0].code or self.default_code
             name = custom_prod and custom_prod[0].name or self.name
 
         ref = '[' + code + '] ' if code else ''
