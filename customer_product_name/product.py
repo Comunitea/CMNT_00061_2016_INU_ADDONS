@@ -60,8 +60,8 @@ class product_product(models.Model):
                                                      custom_prod[0].name or ''
 
     def get_product_complete_name(self, partner):
-        code = False
-        name = False
+        code = self.default_code
+        name = self.name
         if not partner:
             return self.default_code or ''
         if isinstance(partner, (int, long)):
