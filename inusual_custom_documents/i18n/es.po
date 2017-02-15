@@ -21,6 +21,11 @@ msgid "Add comments..."
 msgstr "Añadir comentarios..."
 
 #. module: inusual_custom_documents
+#: view:website:report.external_layout_header
+msgid "VAT:"
+msgstr "NIF:"
+
+#. module: inusual_custom_documents
 #: field:stock.picking,comments:0
 msgid "Comments"
 msgstr "Comentarios"

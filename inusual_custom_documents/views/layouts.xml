@@ -14,7 +14,7 @@
              <xpath expr="//img" position="after">
                 <span><br/><br/></span>
             </xpath>
-            <xpath expr="//div[@t-field='company.partner_id']" position="after">
+            <xpath expr="//div[@t-field='company.partner_id']/../.." position="after">
                 <p t-if="company.partner_id.vat" style="border-bottom: 1px solid black;">VAT: <span t-field="company.partner_id.vat"/></p>
             </xpath>
             <xpath expr="//div[@t-field='company.partner_id']" position="attributes">
