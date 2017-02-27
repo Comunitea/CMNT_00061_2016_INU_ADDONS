@@ -9,6 +9,9 @@
             <xpath expr="//span[@t-field='l.price_unit']" position="replace">
                 <span t-esc="('%.2f'%l.price_unit).replace('.',',')"/>
             </xpath>
+            <xpath expr="//span[@t-field='l.product_uom_qty']" position="replace">
+                <span t-esc="('%.2f'%l.product_uom_qty).replace('.',',')"/>
+            </xpath>
             <xpath expr="//tbody[@class='sale_tbody']/tr/td[2]/span" position="replace">
                 <span t-esc="', '.join(map( lambda x: not x.child_depend and (str(x.amount * 100) + '%') or '0%', l.tax_id))"/>
             </xpath>
