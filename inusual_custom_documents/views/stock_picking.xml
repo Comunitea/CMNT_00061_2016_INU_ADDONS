@@ -12,5 +12,24 @@
                 </field>
             </field>
         </record>
+
+
+        <report
+            string="Medicion audio"
+            id="action_report_med_audio"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="inusual_custom_documents.action_report_med_audio"
+            file="stock.report_picking"
+        />
+
+        <report
+            string="Medicion pantalla"
+            id="action_report_med_pantalla"
+            model="stock.picking"
+            report_type="qweb-pdf"
+            name="inusual_custom_documents.action_report_med_pantalla"
+            file="stock.report_picking"
+        />
     </data>
 </openerp>
