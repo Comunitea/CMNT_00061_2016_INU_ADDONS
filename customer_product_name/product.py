@@ -50,11 +50,11 @@ class product_product(models.Model):
         if isinstance(partner, (int, long)):
             partner = self.env['res.partner'].browse(partner)
         custom_prod = self.env['product.customer'].search(
-            [('product_id', '=', self.id), ('customer_id', '=', partner.id)])
+            [('product_id', '=', self.product_tmpl_id.id), ('customer_id', '=', partner.id)])
         if not custom_prod:
             top_partner_id = partner.get_top_partner_id()
             custom_prod = self.env['product.customer'].search(
-                [('product_id', '=', self.id), ('customer_id', '=',
+                [('product_id', '=', self.product_tmpl_id.id), ('customer_id', '=',
                                                 top_partner_id)])
         return custom_prod and custom_prod[0].code or '', custom_prod and \
                                                      custom_prod[0].name or ''
@@ -67,11 +67,11 @@ class product_product(models.Model):
         if isinstance(partner, (int, long)):
             partner = self.env['res.partner'].browse(partner)
         custom_prod = self.env['product.customer'].search(
-            [('product_id', '=', self.id), ('customer_id', '=', partner.id)])
+            [('product_id', '=', self.product_tmpl_id.id), ('customer_id', '=', partner.id)])
         if not custom_prod:
             top_partner_id = partner.get_top_partner_id()
             custom_prod = self.env['product.customer'].search(
-                [('product_id', '=', self.id), ('customer_id', '=',
+                [('product_id', '=', self.product_tmpl_id.id), ('customer_id', '=',
                                                 top_partner_id)])
 
             code = custom_prod and custom_prod[0].code or self.default_code
