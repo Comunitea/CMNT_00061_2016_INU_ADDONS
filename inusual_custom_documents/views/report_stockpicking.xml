@@ -23,6 +23,9 @@
             <xpath expr="//span[@t-field='move.product_uom_qty']" position="replace">
                 <span t-esc="('%.2f'%move.product_uom_qty).replace('.',',')"/>
             </xpath>
+            <xpath expr="//span[@t-field='move.product_id']" position="replace">
+                <span t-field="move.name"/>
+            </xpath>
         </template>
 
     </data>
