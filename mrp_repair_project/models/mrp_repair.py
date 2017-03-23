@@ -72,7 +72,7 @@ class MrpRepair(models.Model):
 
     @api.multi
     def action_repair_start(self):
-        res = super(MrpRepair, )
+        res = super(MrpRepair, self).action_repair_start()
         for repair in self:
             repair. button_add_repair_task()
         return res
