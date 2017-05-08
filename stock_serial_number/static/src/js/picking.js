@@ -89,7 +89,7 @@ openerp.stock_serial_number = function(instance){
             var self = this
             this._super();
             this.$('.js_op_table_todo tr').find('td.js_row_qty').each(function(index, elm)
-            {   
+            {
                 var qty_elm = $(elm).find('div form input')
                 var minus_elm = $(elm).find('.js_minus')
                 var plus_elm = $(elm).find('.js_plus')
@@ -102,8 +102,12 @@ openerp.stock_serial_number = function(instance){
             })
             this.$('.js_assign_serial_number').click(function(event){
                 var $ship_modal = self.$el.siblings('#js_SerialNumber');
+                self.$('.js_serial_number').val('');
+                self.getParent().barcode_scanner.disconnect();
                 $ship_modal.modal();
-
+                $ship_modal.on('shown.bs.modal', function(){
+                    self.$('.js_serial_number').focus();
+                })
                 $('#js_SerialNumber input[name="use_packop_id"]').val($(event.target).attr('data-id'))
 
                 $('#js_SerialNumber input.js_serial_number').keypress(function(e){
@@ -134,8 +138,8 @@ openerp.stock_serial_number = function(instance){
                     $ship_modal.modal('hide')
                     var selector = '.js_qty[data-op_id=' + packop_id + ']'
                     self.$(selector).val(final_serial_numbers.length)
-                    self.$('.js_qty').blur()
-                });                
+                    self.$(selector).blur()
+                });
             });
         },
 
