@@ -33,6 +33,8 @@ class StockPackOperation(models.Model):
                     {'name': serial_number,
                      'product_id': self.product_id.id})
             lots.append(str(lot.id))
+            if not self.lot_id:
+                self.lot_id = lot.id
 
         serial_numbers_str = ','.join(lots)
         self.write({'serial_numbers_str': serial_numbers_str})
