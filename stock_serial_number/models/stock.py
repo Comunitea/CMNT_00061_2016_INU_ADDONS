@@ -32,6 +32,8 @@ class StockPackOperation(models.Model):
                 lot = self.env['stock.production.lot'].create(
                     {'name': serial_number,
                      'product_id': self.product_id.id})
+            else:
+                lot = lot[0]
             lots.append(str(lot.id))
             if not self.lot_id:
                 self.lot_id = lot.id

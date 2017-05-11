@@ -34,13 +34,18 @@
                 </div>
             </div>
         </t>
+        <t t-jquery=".btn-group a.js_create_lot" t-operation="replace">
+            <t t-if="(row.cols.use_serial_number != true)">
+                <a class="js_create_lot" href="#">Create &#47; Change Lot</a>
+            </t>
+        </t>
         <t t-jquery=".btn-group ul" t-operation="append">
             <t t-if="(row.cols.use_serial_number == true)">
-                 <li><a class="js_assign_serial_number" t-att-data-id="row.cols.id" href="#">Assign serial number</a></li>           
-            </t>   
+                 <li><a class="js_assign_serial_number" t-att-data-id="row.cols.id" href="#">Assign serial number</a></li>
+            </t>
         </t>
         <t t-jquery=".js_qty" t-operation="replace">
-            <input type="text" class="form-control text-center js_qty " t-att-data-use_serial_number='row.cols.use_serial_number' 
+            <input type="text" class="form-control text-center js_qty " t-att-data-use_serial_number='row.cols.use_serial_number'
             t-att-value="row.cols.rem" t-att-data-op_id='row.cols.id'></input>
            <!--  <div class="input-group">
             <span class="input-group-addon js_minus input-sm" t-att-data-product-id='row.cols.product_id'
@@ -53,6 +58,6 @@
                   t-att-data-use_serial_number='row.cols.use_serial_number'><a href="#"><i class="fa fa-plus"></i></a></span>
             </div> -->
         </t>
-        
+
     </t>
 </templates>
