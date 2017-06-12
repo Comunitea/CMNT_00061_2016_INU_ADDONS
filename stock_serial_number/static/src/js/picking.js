@@ -88,6 +88,10 @@ openerp.stock_serial_number = function(instance){
         renderElement: function(){
             var self = this
             this._super();
+            this.$('.js_create_lot').click(function(){
+                var $lot_modal = self.$el.siblings('#js_LotChooseModal');
+                $lot_modal.off('hidden.bs.modal');
+            });
             this.$('.js_op_table_todo tr').find('td.js_row_qty').each(function(index, elm)
             {
                 var qty_elm = $(elm).find('div form input')
