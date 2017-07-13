@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* stock_serial_number
+#   * stock_serial_number
 #
 msgid ""
 msgstr ""
@@ -65,8 +65,7 @@ msgid "Serial numbers str"
 msgstr "Número de serie str"
 
 #. module: stock_serial_number
-#: field:product.product,use_serial_number:0
+#: field:product.template,use_serial_number:0
 #: field:stock.pack.operation,use_serial_number:0
 msgid "Use serial number"
 msgstr "Usar números de serie"
-

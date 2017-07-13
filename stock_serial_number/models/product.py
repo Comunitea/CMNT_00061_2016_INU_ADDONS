@@ -4,9 +4,8 @@
 
 from openerp import models, fields
 
+class ProductTemplate(models.Model):
 
-class ProductProduct(models.Model):
-
-    _inherit = 'product.product'
+    _inherit = 'product.template'
 
     use_serial_number = fields.Boolean('Use serial number')
