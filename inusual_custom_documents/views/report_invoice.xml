@@ -18,6 +18,16 @@
             <xpath expr="//table[1]/tbody/tr/td[5]" position="replace">
             </xpath>
 
+        <xpath expr="//table[1]/tbody/tr/td[1]" position="replace">
+            <span t-if="l.hs_code_id">
+                 <td><span t-field="l.name" /><br /><strong> Intrastat: </strong><span t-field="l.hs_code_id" /></td>
+            </span>
+            <span t-if="not l.hs_code_id">
+                 <td><span t-field="l.name" /></td>
+            </span>
+        </xpath>
+
+
             <!-- Pongo IVA 21% en lugar de impuestos -->
 <!--             <xpath expr="//div[@class='col-xs-4 pull-right']/table/tr[2]" position="replace">
                 <tr>

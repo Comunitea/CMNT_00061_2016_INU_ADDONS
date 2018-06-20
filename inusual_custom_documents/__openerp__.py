@@ -11,7 +11,8 @@
     'depends': [
         'base',
         'cmnt_custom_reports',
-        'stock_picking_valued'
+        'stock_picking_valued',
+        'intrastat_product'
     ],
     'contributors': [
         "Comunitea ",
