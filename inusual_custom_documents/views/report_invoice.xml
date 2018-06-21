@@ -6,7 +6,7 @@
 
             <!-- Quito unidad de medida y alineo cantidad a la derecha-->
             <xpath expr="//table[1]/tbody/tr/td[2]" position="replace">
-                <td class="text-right" > 
+                <td class="text-right" >
                     <span t-esc="('%.2f'%l.quantity).replace('.',',')"/>
                 </td>
             </xpath>
@@ -20,7 +20,7 @@
 
         <xpath expr="//table[1]/tbody/tr/td[1]" position="replace">
             <span t-if="l.hs_code_id">
-                 <td><span t-field="l.name" /><br /><strong> Intrastat: </strong><span t-field="l.hs_code_id" /></td>
+                 <td><span t-field="l.name" /><br /><strong> Intrastat: </strong><span t-field="l.hs_code_id" /> <strong>Weight: </strong><span t-field="l.weight"/></td>
             </span>
             <span t-if="not l.hs_code_id">
                  <td><span t-field="l.name" /></td>
