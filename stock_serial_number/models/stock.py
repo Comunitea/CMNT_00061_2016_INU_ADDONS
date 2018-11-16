@@ -9,11 +9,25 @@ class StockPackOperation(models.Model):
 
     _inherit = 'stock.pack.operation'
 
-    serial_numbers_str = fields.Char(size=512, readonly=True)
+    serial_numbers_str = fields.Char(size=512, readonly=True, copy=False)
     # Para que el cliente web pueda leer este atributo en la operación
     use_serial_number = fields.Boolean('Use serial number',
                                        related="product_id.use_serial_number",
                                        readonly=True)
+
+    @api.multi
+    def action_drop_down(self):
+        return super(
+            StockPackOperation,
+            self.with_context(move_serial_number=True)).action_drop_down()
+
+    @api.one
+    def copy(self, default=None):
+        res = super(StockPackOperation, self).copy(default)
+        if self._context.get('move_serial_number', False):
+            res.serial_numbers_str = self.serial_numbers_str
+            self.serial_numbers_str = False
+        return res
 
     @api.multi
     def set_serial_numbers(self, serial_numbers):
