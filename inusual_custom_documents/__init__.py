@@ -5,3 +5,4 @@ from . import models
 from . import stock_report
 from . import stock
 from . import account
+from . import purchase
