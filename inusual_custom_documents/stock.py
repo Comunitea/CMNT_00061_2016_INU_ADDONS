@@ -13,5 +13,10 @@ class StockMove(models.Model):
         res = super(StockMove, self)._get_invoice_line_vals(cr, uid, move,
                                                             partner, inv_type,
                                                             context)
-        res['weight'] = move.weight
+        res['weight'] = move.product_id.weight
+        hs_code = move.product_id.get_hs_code_recursively()
+        if hs_code:
+            res['hs_code_id'] = hs_code.id
+        else:
+            res['hs_code_id'] = False
         return res
