@@ -10,7 +10,7 @@
     "depends": [
         "mrp_analytic",
         "project",
-        "project_timesheet",
+        "hr_timesheet",
         "mrp_project",
     ],
     'license': 'AGPL-3',

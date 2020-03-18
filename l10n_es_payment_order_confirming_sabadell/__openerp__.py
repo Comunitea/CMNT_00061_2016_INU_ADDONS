@@ -21,5 +21,5 @@
         'data/payment_type_data.xml',
         'views/payment_mode_view.xml',
     ],
-    'installable': True,
+    'installable': False, #TOMIGRATE al nuevo formato
 }
