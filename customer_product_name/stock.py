@@ -40,16 +40,17 @@ class stock_move(models.Model):
             self.product_name = ''
 
 
-class stock_pack_operation(models.Model):
+#TOMIGRATE
+# ~ class stock_pack_operation(models.Model):
 
-    _inherit = 'stock.pack.operation'
+    # ~ _inherit = 'stock.pack.operation'
 
-    # Se añade el campo para utilizarlo en el reporte qweb.
-    product_name = fields.Char('Product name', size=64,
-                               compute='_get_product_name', store=True)
+    # ~ # Se añade el campo para utilizarlo en el reporte qweb.
+    # ~ product_name = fields.Char('Product name', size=64,
+                               # ~ compute='_get_product_name', store=True)
 
-    @api.one
-    @api.depends('product_id', 'picking_id.partner_id')
-    def _get_product_name(self):
-        self.product_name = self.product_id.get_product_complete_name(
-            self.picking_id.partner_id)
+    # ~ @api.one
+    # ~ @api.depends('product_id', 'picking_id.partner_id')
+    # ~ def _get_product_name(self):
+        # ~ self.product_name = self.product_id.get_product_complete_name(
+            # ~ self.picking_id.partner_id)

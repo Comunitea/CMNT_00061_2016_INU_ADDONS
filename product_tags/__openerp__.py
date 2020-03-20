@@ -27,7 +27,7 @@
     "website": "http://julius.fr",
     "category": "Sales Management",
     "depends": [
-        'product',
+        'sale',
     ],
     "description": """
     Add tags in products like it's done for the partners
