@@ -4,6 +4,7 @@
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2013 Julius Network Solutions SARL <contact@julius.fr>
 #    Copyright (C) 2015 credativ ltd. <info@credativ.co.uk>
+#    Copyright (C) 2017-2018 Artem Shurshilov <shurshilov.a@yandex.ru>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -21,24 +22,30 @@
 #
 
 {
-    "name": "Product Tags",
+    "name": "Product Tags v. 12",
     "version": "1.0",
-    "author": "Julius Network Solutions",
-    "website": "http://julius.fr",
+    'license': 'GPL-3',
+    "author": "Shurshilov Artem",
+#    "website": "https://vk.com/id20132180",
+    'website': "http://www.eurodoo.com",
     "category": "Sales Management",
     "depends": [
+        'product',
         'sale',
     ],
-    "description": """
-    Add tags in products like it's done for the partners
-    """,
     "demo": [],
     "data": [
         'security/ir.model.access.csv',
         'product_view.xml',
     ],
+    'images': [
+        'static/description/icon.png',
+        'static/description/kanban.png',
+     ],
     'installable': True,
-    'active': False,
+    'application': False,
+    'auto_install': False,
+
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

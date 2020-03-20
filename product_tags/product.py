@@ -4,6 +4,7 @@
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2013 Julius Network Solutions SARL <contact@julius.fr>
 #    Copyright (C) 2015 credativ ltd. <info@credativ.co.uk>
+#    Copyright (C) 2017-2018 Artem Shurshilov <shurshilov.a@yandex.ru>
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -18,42 +19,42 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
-#
 from openerp import api
 from openerp import fields
 from openerp import models
+from openerp import exceptions
 
 
 class ProductTag(models.Model):
     _description = 'Product Tags'
     _name = "product.tag"
 
-    # this should be the default according to the documentation, but no such
-    # thing is done in the actual implementation
-    _rec_name = 'display_name'
-
     name = fields.Char('Tag Name', required=True, translate=True)
-    display_name = fields.Char('Full Name', compute='_compute_display_name')
     active = fields.Boolean(help='The active field allows you to hide the tag without removing it.', default=True)
-    parent_id = fields.Many2one(string='Parent Tag', comodel_name='product.tag', select=True, ondelete='cascade')
+    parent_id = fields.Many2one(string='Parent Tag', comodel_name='product.tag', index=True, ondelete='cascade')
     child_ids = fields.One2many(string='Child Tags', comodel_name='product.tag', inverse_name='parent_id')
-    parent_left = fields.Integer('Left Parent', select=True)
-    parent_right = fields.Integer('Right Parent', select=True)
+    parent_left = fields.Integer('Left Parent', index=True)
+    parent_right = fields.Integer('Right Parent', index=True)
 
     image = fields.Binary('Image')
 
-    _parent_store = True
-    _parent_order = 'name'
-    _order = 'parent_left'
+    # _parent_store = True
+    # _parent_order = 'name'
+    # _order = 'parent_left'
 
-    @api.one
-    @api.depends('name', 'parent_id.name')
-    def _compute_display_name(self):
+    @api.multi
+    def name_get(self):
         """ Return the tags' display name, including their direct parent. """
-        if self.parent_id:
-            self.display_name = self.parent_id.display_name + ' / ' + self.name
-        else:
-            self.display_name = self.name
+        res = {}
+        for record in self:
+            current = record
+            name = current.name
+            while current.parent_id:
+                name = '%s / %s' % (current.parent_id.name, name)
+                current = current.parent_id
+            res[record.id] = name
+
+        return  [(record.id,  record.name) for record in self]
 
     @api.model
     def name_search(self, name, args=None, operator='ilike', limit=100):
