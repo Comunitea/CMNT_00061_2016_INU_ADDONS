@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <!-- Footer más pequeño -->
-        <template id="inusual_external_layout_footer" inherit_id="report.external_layout_footer">
-             <xpath expr="//div" position="attributes">
-                <attribute name="class">footer</attribute>
+<odoo>
+
+        <template id="inusual_external_layout_footer" inherit_id="web.external_layout_standard">
+             <xpath expr="//div[hasclass('footer')]" position="attributes">
                 <attribute name="style">font-size:9px;</attribute>
             </xpath>
-        </template>
-
-        <!-- Separación logo y raya -->
-        <template id="inusual_external_layout_header" inherit_id="report.external_layout_header">
             <xpath expr="//img/.." position="after">
                 <div class="col-xs-9">
                     <t t-if="report_tittle">
@@ -19,12 +13,9 @@
                 </div>
                 <span><br/><br/></span>
             </xpath>
-            <xpath expr="//div[@t-field='company.partner_id']/../.." position="after">
+            <xpath expr="//div[@t-field='company.partner_id']" position="after">
                 <p t-if="company.partner_id.vat" style="border-bottom: 1px solid black;">VAT: <span t-field="company.partner_id.vat"/></p>
             </xpath>
-            <xpath expr="//div[@t-field='company.partner_id']" position="attributes">
-                <attribute name="style"></attribute>
-            </xpath>
         </template>
-     </data>
-</openerp>
+
+</odoo>

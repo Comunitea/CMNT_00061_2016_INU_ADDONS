@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-		<!-- campo notas en vista formulario -->
-		<record model="ir.ui.view" id="mrp_production_form_view">
-			<field name="name">mrp.production.form.inherit</field>
-            <field name="model">mrp.production</field>
-            <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
-            <field name="arch" type="xml">
-				<xpath expr="//page[@string='Consumed Products']/group" position="inside">
-					<field name="notes"/>
-				</xpath>
-			</field>
-		</record>
-				
-		<!-- campo notas en informe pdf -->
-		<template id="report_mrporder_inherit" inherit_id="mrp.report_mrporder">
-			<xpath expr="//div[@class='page']" position="inside">
-				<p t-if="o.notes" class="text-justify">
-					<strong>Notes: </strong><br/>
-					<span t-field="o.notes"/>	
-				</p>
-			</xpath>
-		</template>
-	</data>
-</openerp>
+<odoo>
+
+    <!-- campo notas en vista formulario -->
+    <record model="ir.ui.view" id="mrp_production_form_view">
+        <field name="name">mrp.production.form.inherit</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view" />
+        <field name="arch" type="xml">
+            <field name="move_raw_ids" position="after">
+                <field name="notes"/>
+            </field>
+        </field>
+    </record>
+    <!-- campo notas en informe pdf -->
+    <template id="report_mrporder_inherit" inherit_id="mrp.report_mrporder">
+        <xpath expr="//table[@t-if='o.move_raw_ids']" position="after">
+            <p t-if="o.notes" class="text-justify">
+                <br/>
+                <strong>Notes:</strong>
+                <br />
+                <span t-field="o.notes" />
+            </p>
+        </xpath>
+    </template>
+
+</odoo>

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # © 2016 Comunitea - Javier Colmenero <javier@comunitea.com>
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
@@ -9,10 +8,11 @@
     "category": "Custom",
     'license': 'AGPL-3',
     'depends': [
-        'base',
-        'cmnt_custom_reports',
-        'stock_picking_valued',
-        'intrastat_product'
+        'stock_picking_report_valued',
+        'intrastat_product',
+        'mrp',
+        'account',
+        'purchase'
     ],
     'contributors': [
         "Comunitea ",
