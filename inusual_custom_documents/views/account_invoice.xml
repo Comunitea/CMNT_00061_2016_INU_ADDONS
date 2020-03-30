@@ -2,8 +2,7 @@
 <!-- © 2018 Comunitea
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<openerp>
-    <data>
+<odoo>
 
         <record id="invoice_form_add_weight" model="ir.ui.view">
             <field name="name">account.invoice.form</field>
@@ -16,5 +15,4 @@
             </field>
         </record>
 
-    </data>
-</openerp>
+</odoo>

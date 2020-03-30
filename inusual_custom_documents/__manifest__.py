@@ -3,7 +3,7 @@
 
 {
     'name': 'Inusual Custom Documents',
-    'version': '8.0.0.0.0',
+    'version': '12.0.1.0.0',
     'author': 'Comunitea ',
     "category": "Custom",
     'license': 'AGPL-3',
@@ -12,11 +12,13 @@
         'intrastat_product',
         'mrp',
         'account',
-        'purchase'
+        'purchase_stock',
+        'account_invoice_report_due_list'
     ],
     'contributors': [
-        "Comunitea ",
-        "Javier Colmenero <javier@comunitea.com>"
+        "Comunitea: ",
+        "Javier Colmenero <javier@comunitea.com>, "
+        "Omar Castiñeira Saavedra <omar@comunitea.com>"
     ],
     "data": [
         "views/report_invoice.xml",
@@ -25,11 +27,7 @@
         "views/manufacturing_order.xml",
         "views/stock_picking.xml",
         "views/report_saleorder.xml",
-        'account_invoice.xml'
-    ],
-    "demo": [
-    ],
-    'test': [
+        'views/account_invoice.xml'
     ],
     "installable": True
 }

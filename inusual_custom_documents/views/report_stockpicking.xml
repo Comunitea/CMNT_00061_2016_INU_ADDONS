@@ -4,25 +4,29 @@
 
 <odoo>
 
-        <template id="report_picking_document_custom" inherit_id="stock.report_picking">
+        <template id="valued_report_picking_custom" inherit_id="stock_picking_report_valued.valued_report_picking">
             <xpath expr="//th[@t-if='o.origin']" position="after">
-                <th t-if="o.sale_id.client_order_ref"><strong>Your reference</strong></th>
+                <th t-if="o.sudo().sale_id.client_order_ref"><strong>Your reference</strong></th>
             </xpath>
             <xpath expr="//td[@t-if='o.origin']" position="after">
-                <td t-if="o.sale_id.client_order_ref">
-                    <span t-field="o.sale_id.client_order_ref"/>
+                <td t-if="o.sudo().sale_id.client_order_ref">
+                    <span t-field="o.sudo().sale_id.client_order_ref"/>
                 </td>
             </xpath>
-            <xpath expr="//p[@t-field='o.note']" position="after">
+            <xpath expr="//div[hasclass('page')]" position="inside">
                 <p t-if="o.comments" class="text-justify">
                     <strong>Comments: </strong><br/>
                     <span t-field="o.comments"/>
                 </p>
             </xpath>
-            <xpath expr="//span[@t-field='ml.product_uom_id']" position="replace"/>
-        </template>
-
-        <template id="valued_report_picking_custom" inherit_id="stock_picking_report_valued.valued_report_picking">
+            <xpath expr="//div[@t-if='o.sudo().sale_id.client_order_ref']" position="attributes">
+                <attribute name="t-if">False</attribute>
+            </xpath>
+            <xpath expr="//span[@t-field='o.name']" position="before">
+                <span t-if="o.picking_type_code == 'outgoing'">Output picking </span>
+                <span t-if="o.picking_type_code == 'incoming'">Input picking </span>
+                <span t-if="o.picking_type_code == 'internal'">Picking </span>
+            </xpath>
             <xpath expr="//table[hasclass('mt32')]//th" position="before">
                 <th class="text-right"><strong>Gross Amount:</strong></th>
                 <th class="text-right"><strong>Discounted:</strong></th>
@@ -32,5 +36,23 @@
                 <td class="text-right"><span t-field="o.amount_discounted"></span></td>
             </xpath>
         </template>
+
+    <template id="report_med_audio">
+        <t t-call="web.html_container">
+            <t t-set="report_tittle" t-value="'MEDICIÓN AUDIO'"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_med_pantalla">
+        <t t-call="web.html_container">
+            <t t-set="report_tittle" t-value="'MEDICIÓN PANTALLAS'"/>
+            <t t-foreach="docs" t-as="o">
+                <t t-call="stock.report_delivery_document" t-lang="o.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
 
 </odoo>

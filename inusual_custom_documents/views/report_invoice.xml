@@ -7,59 +7,24 @@
         <!-- Quito columna impuestos -->
         <xpath expr="//table[1]/thead/tr/th[6]" position="replace" />
         <xpath expr="//table[1]/tbody//tr//td[6]" position="replace" />
+        <xpath expr="//span[@t-field='o.payment_term_id.note']" position="before">
+            <strong>Payment Term: </strong>
+        </xpath>
+        <xpath expr="//span[@t-field='o.comment']" position="before">
+            <strong>Comment: </strong>
+        </xpath>
         <xpath expr="//span[@t-field='line.name']" position="replace">
             <span t-if="line.hs_code_id">
-                <td>
-                    <span t-field="line.name" />
-                    <br />
-                    <strong>Intrastat:</strong>
-                    <span t-field="line.hs_code_id" />
-                    <strong>Weight:</strong>
-                    <span t-field="line.weight" />
-                </td>
+                <span t-field="line.name" />
+                <br />
+                <strong>Intrastat:</strong>
+                <span t-field="line.hs_code_id" />
+                <strong>Weight:</strong>
+                <span t-field="line.weight" />
             </span>
             <span t-if="not line.hs_code_id">
-                <td>
-                    <span t-field="line.name" />
-                </td>
+                <span t-field="line.name" />
             </span>
-        </xpath>
-        <!-- Campos fijos de 3 columnas y separador encima -->
-        <xpath expr="//div[@id='informations']" position="replace">
-            <table class="table table-condensed" id="informations">
-                <thead>
-                    <tr>
-                        <th>
-                            <strong>Description</strong>
-                        </th>
-                        <th>
-                            <strong>Source</strong>
-                        </th>
-                        <th>
-                            <strong>Invoice Date</strong>
-                        </th>
-                        <th name="td_sched_date_h">
-                            <strong>Reference</strong>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <span t-field="o.name" />
-                        </td>
-                        <td>
-                            <span t-field="o.origin" />
-                        </td>
-                        <td>
-                            <span t-field="o.date_invoice"/>
-                        </td>
-                        <td>
-                            <span t-field="o.reference" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
         </xpath>
     </template>
 

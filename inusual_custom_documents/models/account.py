@@ -1,26 +1,31 @@
 # © 2018 Comunitea
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from odoo import models, fields, api
+from odoo.addons import decimal_precision as dp
 
 
 class AccountInvoiceLine(models.Model):
 
     _inherit = 'account.invoice.line'
 
-    weight = fields.Float('Weight')
+    weight = fields.Float('Weight', digits=dp.get_precision('Stock Weight'))
 
-    @api.multi
-    def product_id_change(
-            self, product, uom_id, qty=0, name='', type='out_invoice',
-            partner_id=False, fposition_id=False, price_unit=False,
-            currency_id=False, company_id=None):
-        res = super(AccountInvoiceLine, self).product_id_change(
-            product, uom_id, qty=qty, name=name, type=type,
-            partner_id=partner_id, fposition_id=fposition_id,
-            price_unit=price_unit, currency_id=currency_id,
-            company_id=company_id)
+    @api.onchange('product_id')
+    def intrastat_product_id_change(self):
+        super().intrastat_product_id_change()
+        if self.hs_code_id:
+            self.weight = self.product_id.weight
 
-        if product:
-            product = self.env['product.product'].browse(product)
-            res['value']['weight'] = product.weight
+
+class SaleOrderLine(models.Model):
+
+    _inherit = "sale.order.line"
+
+    def _prepare_invoice_line(self, qty):
+        res = super()._prepare_invoice_line(qty)
+        if self.product_id:
+            hs_code = self.product_id.get_hs_code_recursively()
+            if hs_code:
+                res['hs_code_id'] = hs_code.id
+                res['weight'] = self.product_id.weight
         return res

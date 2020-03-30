@@ -7,7 +7,13 @@
         <template id="report_sale_order_custom" inherit_id="sale.report_saleorder_document">
             <xpath expr="//span[@t-field='line.product_uom']" position="replace"/>
             <xpath expr="//span[contains(@t-esc, 'line.tax_id')]/.." position="attributes">
-                <attribute name="t-esc">', '.join(map(lambda x: not x.child_depend and (str(x.amount * 100) + '%') or '0%', line.tax_id))</attribute>
+                <attribute name="t-esc">', '.join(map(lambda x: x.name, line.tax_id))</attribute>
+            </xpath>
+            <xpath expr="//span[@t-field='doc.payment_term_id.note']" position="before">
+                <strong>Payment Term: </strong>
+            </xpath>
+            <xpath expr="//div[@name='payment_term']" position="attributes">
+                <attribute name="t-if">False</attribute>
             </xpath>
         </template>
 

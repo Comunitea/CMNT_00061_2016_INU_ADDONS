@@ -5,13 +5,13 @@ from odoo import api, models
 
 class PurchaseOrder(models.Model):
 
-    _inherit = 'purchase.order'
+    _inherit = 'purchase.order.line'
 
-    @api.model
-    def _prepare_order_line_move(self, order, order_line,
-                                 picking_id, group_id):
-        res = super(PurchaseOrder, self)._prepare_order_line_move(
-            order, order_line, picking_id, group_id)
-        res[0]['name'] = order_line.product_id.with_context(
-            lang=order.dest_address_id.lang).display_name
+    @api.multi
+    def _prepare_stock_moves(self, picking):
+        res = super()._prepare_stock_moves(picking)
+        if res and self.order_id.dest_address_id:
+            res[0]['name'] = self.product_id.\
+                with_context(lang=self.order_id.dest_address_id.lang).\
+                display_name
         return res

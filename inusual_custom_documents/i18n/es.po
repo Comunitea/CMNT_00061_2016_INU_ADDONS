@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#   * inusual_custom_documents
+#       * inusual_custom_documents
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-20 10:39+0000\n"
-"PO-Revision-Date: 2018-06-21 12:57+0200\n"
-"Last-Translator: Jesús Ventosinos Mayor <jesus@comunitea.com>\n"
+"POT-Creation-Date: 2020-03-30 18:09+0000\n"
+"PO-Revision-Date: 2020-03-30 18:09+0000\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,86 +16,143 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: inusual_custom_documents
-#: view:stock.picking:inusual_custom_documents.stock_picking_form_view
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+msgid "<br/>\n"
+"                <strong>Intrastat:</strong>"
+msgstr "<br/>\n"
+"                <strong>Intrastat:</strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_mrporder_inherit
+msgid "<br/>\n"
+"                <strong>Notes:</strong>\n"
+"                <br/>"
+msgstr "<br/>\n"
+"                <strong>Notas:</strong>\n"
+"                <br/>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+msgid "<strong>Comment: </strong>"
+msgstr "<strong>Comentario: </strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "<strong>Comments: </strong><br/>"
+msgstr "<strong>Comentarios: </strong><br/>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "<strong>Discounted:</strong>"
+msgstr "<strong>Descontado:</strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "<strong>Gross Amount:</strong>"
+msgstr "<strong>Importe bruto:</strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_sale_order_custom
+msgid "<strong>Payment Term: </strong>"
+msgstr "<strong>Plazo de pago: </strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+msgid "<strong>Weight:</strong>"
+msgstr "<strong>Peso:</strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "<strong>Your reference</strong>"
+msgstr "<strong>Su referencia</strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.stock_picking_form_view
 msgid "Add comments..."
-msgstr "Añadir comentarios..."
+msgstr "Añadir comentarios"
 
 #. module: inusual_custom_documents
-#: field:account.invoice.line,weight:0
-msgid "Weight"
-msgstr "Peso"
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking__amount_gross
+msgid "Amount gross"
+msgstr "Importe bruto"
 
 #. module: inusual_custom_documents
-#: view:website:account.report_invoice_document
-msgid "Weight:"
-msgstr "Peso:"
-
-#. module: inusual_custom_documents
-#: view:website:report.external_layout_header
-msgid "VAT:"
-msgstr "NIF:"
-
-#. module: inusual_custom_documents
-#: field:stock.picking,comments:0
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking_comments
 msgid "Comments"
 msgstr "Comentarios"
 
 #. module: inusual_custom_documents
-#: view:website:stock.report_picking
-msgid "Comments:"
-msgstr "Comentarios:"
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking__amount_discounted
+msgid "Disounted amount"
+msgstr "Importe descontado"
 
 #. module: inusual_custom_documents
-#: view:website:account.report_invoice_document
-msgid "Description"
-msgstr "Descripción"
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "Input picking"
+msgstr "Albarán de entrada"
 
 #. module: inusual_custom_documents
-#: view:website:account.report_invoice_document
-msgid "Invoice Date"
-msgstr "Fecha factura"
+#: model:ir.model,name:inusual_custom_documents.model_account_invoice_line
+msgid "Invoice Line"
+msgstr "Línea de factura"
 
 #. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_mrp_production
-msgid "Manufacturing Order"
-msgstr "Órden de producción"
+#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_audio
+msgid "Medicion audio"
+msgstr "Medicion audio"
 
 #. module: inusual_custom_documents
-#: field:mrp.production,notes:0
+#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_pantalla
+msgid "Medicion pantalla"
+msgstr "Medicion pantalla"
+
+#. module: inusual_custom_documents
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_mrp_production_notes
 msgid "Notes"
 msgstr "Notas"
 
 #. module: inusual_custom_documents
-#: view:website:mrp.report_mrporder
-msgid "Notes:"
-msgstr "Notas:"
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "Output picking"
+msgstr "Albarán de salida"
 
 #. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_stock_picking
-msgid "Picking List"
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
+msgid "Picking"
 msgstr "Albarán"
 
 #. module: inusual_custom_documents
-#: view:website:account.report_invoice_document
-msgid "Reference"
-msgstr "Referencia"
+#: model:ir.model,name:inusual_custom_documents.model_purchase_order
+msgid "Purchase Order"
+msgstr "Pedido de compra"
 
 #. module: inusual_custom_documents
-#: view:website:account.report_invoice_document
-msgid "Source"
-msgstr "Origen"
+#: model:ir.model,name:inusual_custom_documents.model_purchase_order_line
+msgid "Purchase Order Line"
+msgstr "Línea pedido de compra"
 
 #. module: inusual_custom_documents
-#: view:website:report.external_layout_footer
-msgid "font-size:9px;"
-msgstr "font-size:9px;"
+#: model:ir.model,name:inusual_custom_documents.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
 
 #. module: inusual_custom_documents
-#: view:website:report.external_layout_footer
-msgid "footer"
-msgstr "footer"
+#: model:ir.model,name:inusual_custom_documents.model_stock_move
+msgid "Stock Move"
+msgstr "Movimiento de existencias"
 
 #. module: inusual_custom_documents
-#: view:website:stock.report_picking
-msgid "Your reference"
-msgstr "Su referencia"
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.inusual_external_layout_footer
+msgid "VAT:"
+msgstr "NIF:"
+
+#. module: inusual_custom_documents
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking__valued
+msgid "Valued"
+msgstr "Valorado"
+
+#. module: inusual_custom_documents
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_account_invoice_line_weight
+msgid "Weight"
+msgstr "Peso"
