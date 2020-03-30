@@ -2,7 +2,7 @@
 # (c) 2020 Omar Castiñeira Saavedra - Comunitea Servicios Tecnológicos S.L.
 # License AGPL-3 - See http://www.gnu.org/licenses/agpl-3.0.html
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 
 
 class ProjectProject(models.Model):
@@ -18,3 +18,20 @@ class ProjectProject(models.Model):
     production_count = fields.Integer(
         string='Manufacturing Count', compute="_compute_mrp_production_count")
     automatic_creation = fields.Boolean()
+
+    def action_view_productions(self):
+        self.ensure_one()
+        domain = [('project_id', '=', self.ids)]
+        return {
+            'name': _('Manufacturing Orders'),
+            'domain': domain,
+            'res_model': 'mrp.production',
+            'type': 'ir.actions.act_window',
+            'view_id': False,
+            'view_mode': 'kanban,tree,form',
+            'view_type': 'form',
+            'context': '''
+                {{'search_default_project_id': [{0}],
+                'default_project_id': {0}}}
+                '''.format(self.id)
+        }

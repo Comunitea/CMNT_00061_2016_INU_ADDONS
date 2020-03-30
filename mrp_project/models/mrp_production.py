@@ -38,20 +38,18 @@ class MrpProduction(models.Model):
     @api.multi
     def _prepare_production_task(self):
         product = self.product_id
-        task_name = "{0}::{1}- {2}".format(
+        task_name = "{0}: {1}- {2}".format(
             self.name,
             "[{0}] ".format(
                 product.default_code if product.default_code else ""
             ),
             product.name
         )
-        task_descr = _("""
-            <p><b>Manufacturing Order:</b> {0}</p>
-            <p><b>Product to Produce:</b> [{1}]{2}</p>
-            <p><b>Quantity to Produce:</b> {3}</p>
-            <p><b>Bill of Material:</b> {4} - {5}</p>
-            <p><b>Planned Date:</b> {6} - {7}</p>
-            """.format(
+        task_descr = _("""Manufacturing Order: {0}
+Product to Produce: [{1}]{2}
+Quantity to Produce: {3}
+Bill of Material: {4} - {5}
+Planned Date: {6} - {7}""".format(
             self.name,
             self.product_id.default_code,
             self.product_id.name,
@@ -77,14 +75,12 @@ class MrpProduction(models.Model):
             workorder.name,
             product.name
         )
-        task_descr = _("""
-            <p><b>Manufacturing Order:</b> {0}</p>
-            <p><b>Product to Produce:</b> [{1}]{2}</p>
-            <p><b>Quantity to Produce:</b> {3}</p>
-            <p><b>Bill of Material:</b> {4} - {5}</p>
-            <p><b>Planned Date:</b> {6} - {7}</p>
-            <p><b>Workorder:</b> {8}</p>
-            """.format(
+        task_descr = _("""Manufacturing Order: {0}
+Product to Produce: [{1}]{2}
+Quantity to Produce: {3}
+Bill of Material: {4} - {5}
+Planned Date: {6} - {7}
+Workorder: {8}""".format(
             self.name,
             self.product_id.default_code,
             self.product_id.name,

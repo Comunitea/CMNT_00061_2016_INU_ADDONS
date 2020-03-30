@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#       * mrp_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-30 18:41+0000\n"
+"PO-Revision-Date: 2020-03-30 18:41+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: mrp_project
+#: model:ir.model,name:mrp_project.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_project_project__automatic_creation
+msgid "Automatic Creation"
+msgstr "Creación automática"
+
+#. module: mrp_project
+#: model_terms:ir.ui.view,arch_db:mrp_project.account_analytic_line_mrp_search_view
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_form_view
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_inh_search_view
+msgid "Manufacturing"
+msgstr "Fabricación"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_project_project__production_count
+msgid "Manufacturing Count"
+msgstr "# Fabricaciones"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_account_analytic_line__mrp_production_id
+#: model:ir.model.fields,field_description:mrp_project.field_project_task__mrp_production_id
+msgid "Manufacturing Order"
+msgstr "Orden de fabricación"
+
+#. module: mrp_project
+#: code:addons/mrp_project/models/mrp_production.py:52
+#, python-format
+msgid "Manufacturing Order: {0}\n"
+"Product to Produce: [{1}]{2}\n"
+"Quantity to Produce: {3}\n"
+"Bill of Material: {4} - {5}\n"
+"Planned Date: {6} - {7}"
+msgstr "Orden de producción: {0}\n"
+"Producto a producir: [{1}]{2}\n"
+"Cantidad a producir: {3}\n"
+"Lista de materiales: {4} - {5}\n"
+"Fecha planificada: {6} - {7}"
+
+#. module: mrp_project
+#: code:addons/mrp_project/models/mrp_production.py:83
+#, python-format
+msgid "Manufacturing Order: {0}\n"
+"Product to Produce: [{1}]{2}\n"
+"Quantity to Produce: {3}\n"
+"Bill of Material: {4} - {5}\n"
+"Planned Date: {6} - {7}\n"
+"Workorder: {8}"
+msgstr "Orden de producción: {0}\n"
+"Producto a producir: [{1}]{2}\n"
+"Cantidad a producir: {3}\n"
+"Lista de materiales: {4} - {5}\n"
+"Fecha planificada: {6} - {7}\n"
+"Orden de trabajo: {8}"
+
+#. module: mrp_project
+#: code:addons/mrp_project/models/project_project.py:26
+#, python-format
+msgid "Manufacturing Orders"
+msgstr "Producciones"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_project_task__final_product
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_form_view
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_inh_tree_view
+msgid "Product to Produce"
+msgstr "Producto a producir"
+
+#. module: mrp_project
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_mrp_procurement_shortcut_form_view
+msgid "Productions"
+msgstr "Producciones"
+
+#. module: mrp_project
+#: model:ir.model,name:mrp_project.model_project_project
+#: model:ir.model.fields,field_description:mrp_project.field_mrp_production__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_project_task__production_scheduled_products
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_form_view
+msgid "Scheduled Products"
+msgstr "Productos planificados"
+
+#. module: mrp_project
+#: model:ir.model,name:mrp_project.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_mrp_workorder__work_ids
+msgid "Task works"
+msgstr "Horas trabajadas"
+
+#. module: mrp_project
+#: model:ir.model.fields,field_description:mrp_project.field_mrp_workorder__task_ids
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: mrp_project
+#: model:ir.model,name:mrp_project.model_hr_analytic_timesheet
+msgid "Timesheet Line"
+msgstr "Línea del parte de horas"
+
+#. module: mrp_project
+#: model:ir.model,name:mrp_project.model_mrp_workorder
+#: model:ir.model.fields,field_description:mrp_project.field_account_analytic_line__workorder_id
+#: model:ir.model.fields,field_description:mrp_project.field_project_task__workorder_id
+#: model_terms:ir.ui.view,arch_db:mrp_project.account_analytic_line_mrp_search_view
+msgid "Work Order"
+msgstr "Orden de trabajo"
+
+#. module: mrp_project
+#: model_terms:ir.ui.view,arch_db:mrp_project.project_task_mrp_inh_search_view
+msgid "Workorder"
+msgstr "Orden de trabajo"
