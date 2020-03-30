@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* mrp_repair_project
+#       * mrp_repair_project
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-01-16 12:06+0000\n"
-"PO-Revision-Date: 2017-01-16 12:06+0000\n"
+"POT-Creation-Date: 2020-03-30 19:07+0000\n"
+"PO-Revision-Date: 2020-03-30 19:07+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,23 +16,9 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: mrp_repair_project
-#: code:addons/mrp_repair_project/models/mrp_repair.py:35
-#, python-format
-msgid "\n"
-"        Repair Order: %s\n"
-"        Product to Repair: [%s]%s\n"
-"        Quantity to Repair: %s\n"
-"        "
-msgstr "\n"
-"        Orden de Reparación: %s\n"
-"        Producto a Reparar: [%s]%s\n"
-"        Cantidad a Reparar: %s\n"
-"        "
-
-#. module: mrp_repair_project
-#: view:mrp.repair:mrp_repair_project.mrp_repair_order_form_new_task_button
-msgid "Add Repair Task and Start Repair"
-msgstr "Añadir tarea e iniciar reparación"
+#: model:ir.model.fields,field_description:mrp_repair_project.field_mrp_repair_analytic_account_id
+msgid "Analytic Account"
+msgstr "Cuenta analítica"
 
 #. module: mrp_repair_project
 #: model:ir.model,name:mrp_repair_project.model_account_analytic_line
@@ -40,76 +26,61 @@ msgid "Analytic Line"
 msgstr "Línea analítica"
 
 #. module: mrp_repair_project
-#: field:mrp.repair,analytic_account_id:0
-msgid "Contract/Analytic"
-msgstr "Contract/Analytic"
-
-#. module: mrp_repair_project
-#: help:mrp.repair,analytic_account_id:0
+#: model:ir.model.fields,help:mrp_repair_project.field_mrp_repair_analytic_account_id
 msgid "Link this project to an analytic account if you need financial management on projects. It enables you to connect projects with budgets, planning, cost and revenue analysis, timesheets on projects, etc."
-msgstr "Link this project to an analytic account if you need financial management on projects. It enables you to connect projects with budgets, planning, cost and revenue analysis, timesheets on projects, etc."
+msgstr "Enlace este proyecto a una cuenta analítica si necesita la gestión financiera de los proyectos. Le permite conectar los proyectos con presupuestos, planificación, análisis de costes e ingresos, tiempo dedicado en los proyectos, etc."
 
 #. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_form_view
-msgid "MRP Repair Data"
-msgstr "Información de Reparación"
-
-#. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_form_view
+#: model_terms:ir.ui.view,arch_db:mrp_repair_project.project_task_mrp_form_view
 msgid "Operations"
 msgstr "Operaciones"
 
 #. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_form_view
-#: field:project.task,repair_product:0
+#: model:ir.model.fields,field_description:mrp_repair_project.field_project_task__repair_product
+#: model_terms:ir.ui.view,arch_db:mrp_repair_project.project_task_mrp_form_view
 msgid "Product to Repair"
-msgstr "Producto a Reparar"
+msgstr "Producto a reparar"
 
 #. module: mrp_repair_project
 #: model:ir.model,name:mrp_repair_project.model_project_project
-#: field:mrp.repair,project_id:0
+#: model:ir.model.fields,field_description:mrp_repair_project.field_mrp_repair_project_id
 msgid "Project"
 msgstr "Proyecto"
 
 #. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_inh_search_view_2
+#: model_terms:ir.ui.view,arch_db:mrp_repair_project.project_task_mrp_form_view
+#: model_terms:ir.ui.view,arch_db:mrp_repair_project.project_task_mrp_inh_search_view_2
 msgid "Repair"
 msgstr "Reparación"
 
 #. module: mrp_repair_project
-#: field:project.project,repair_count:0
+#: model:ir.model.fields,field_description:mrp_repair_project.field_project_project__repair_count
 msgid "Repair Count"
-msgstr "Repair Count"
+msgstr "# Reparaciones"
 
 #. module: mrp_repair_project
-#: field:account.analytic.line,mrp_repair_id:0
-#: model:ir.model,name:mrp_repair_project.model_mrp_repair
-#: field:project.task,mrp_repair_id:0
+#: model:ir.model,name:mrp_repair_project.model_repair_order
+#: model:ir.model.fields,field_description:mrp_repair_project.field_account_analytic_line__mrp_repair_id
+#: model:ir.model.fields,field_description:mrp_repair_project.field_project_task__mrp_repair_id
 msgid "Repair Order"
 msgstr "Orden reparación"
 
 #. module: mrp_repair_project
-#: model:ir.actions.act_window,name:mrp_repair_project.act_project_2_repair_all
-msgid "Repair Orders"
-msgstr "Órdenes de reparación"
+#: code:addons/mrp_repair_project/models/mrp_repair.py:37
+#, python-format
+msgid "Repair Order: {0}\n"
+"Product to Repair: [{1}]{2}\n"
+"Quantity to Repair: {3}"
+msgstr "Orden de reparación: {0}\n"
+"Producto a reparar: [{1}]{2}\n"
+"Cantidad a reparar: {3}"
 
 #. module: mrp_repair_project
-#: field:project.task,mrp_repair_lines:0
+#: model:ir.model.fields,field_description:mrp_repair_project.field_project_task__mrp_repair_lines
 msgid "Scheduled Operations"
-msgstr "Scheduled Operations"
-
-#. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_inh_search_view_2
-msgid "Stage"
-msgstr "Etapa"
+msgstr "Operaciones planificadas"
 
 #. module: mrp_repair_project
 #: model:ir.model,name:mrp_repair_project.model_project_task
 msgid "Task"
 msgstr "Tarea"
-
-#. module: mrp_repair_project
-#: view:project.task:mrp_repair_project.project_task_mrp_inh_search_view_2
-msgid "Workorder"
-msgstr "Orden de trabajo"
-
