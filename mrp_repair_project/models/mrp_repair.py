@@ -27,15 +27,14 @@ class MrpRepair(models.Model):
     @api.multi
     def _prepare_repair_task(self):
         product = self.product_id
-        task_name = "{0}::{1}{2}" % (
+        task_name = "{0}: {1}{2}".format(
             self.name,
-            "[{0}] " % product.default_code if product.default_code else "",
+            "[{0}] ".format(product.default_code
+                            if product.default_code else ""),
             product.name)
-        task_descr = _("""
-            <p><b>Repair Order:</b> {0}</p>
-            <p><b>Product to Repair:</b> [{1}]{2}</p>
-            <p><b>Quantity to Repair:</b> {3}</p>
-            """.format(
+        task_descr = _("""Repair Order: {0}
+Product to Repair: [{1}]{2}
+Quantity to Repair: {3}""".format(
             self.name,
             self.product_id.default_code,
             self.product_id.name,
