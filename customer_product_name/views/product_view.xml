@@ -6,8 +6,8 @@
         <field name="name">product.customer.tree</field>
         <field name="model">product.customer</field>
         <field name="arch" type="xml">
-            <tree>
-                <field name="customer_id"/>
+            <tree editable="top">
+                <field name="customer_id" domain="[('customer', '=', True), ('is_company', '=', True)]"/>
                 <field name="code"/>
                 <field name="name"/>
             </tree>
