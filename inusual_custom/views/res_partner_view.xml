@@ -1,33 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<openerp>
-    <data>
-        
-        <record id="view_partner_replace_ref" model="ir.ui.view">
-            <field name="name">res.partner.form.replace.ref</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="type">form</field>
-            <field name="priority">14</field>
-            <field name="arch" type="xml">
-                <field name="ref" position="replace"/>
-            </field>
-        </record>
+<odoo>
 
-        <record id="view_partner_ref_after_category" model="ir.ui.view">
-            <field name="name">res.partner.form.ref.after.category</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="type">form</field>
-            <field name="arch" type="xml">
-                <field name="category_id" position="after">
-                    <label for="ref"/>
-                    <field name="ref"/>
-               
-                </field>
+    <record id="view_partner_replace_ref" model="ir.ui.view">
+        <field name="name">res.partner.form.replace.ref</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="priority">14</field>
+        <field name="arch" type="xml">
+            <field name="ref" position="replace"/>
+            <field name="category_id" position="after">
+                <field name="ref"/>
             </field>
-        </record>
-
-       
+        </field>
+    </record>
 
     <record id="view_partner_tree_ref" model="ir.ui.view">
         <field name="name">view.partner.tree.ref</field>
@@ -40,5 +25,4 @@
         </field>
     </record>
 
-   </data>
-</openerp>
+</odoo>

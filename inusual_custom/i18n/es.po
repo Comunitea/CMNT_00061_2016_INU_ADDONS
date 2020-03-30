@@ -1,13 +1,13 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* inusual_custom
+#       * inusual_custom
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 8.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-26 11:13+0000\n"
-"PO-Revision-Date: 2017-12-26 11:13+0000\n"
+"POT-Creation-Date: 2020-03-30 11:32+0000\n"
+"PO-Revision-Date: 2020-03-30 11:32+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,21 +21,18 @@ msgid "Bank Statement Line"
 msgstr "Línea de extracto bancario"
 
 #. module: inusual_custom
-#: code:addons/inusual_custom/models/account_invoice.py:18
-#: code:addons/inusual_custom/models/account_invoice.py:22
-#, python-format
-msgid "Error validating data!"
-msgstr "Error validando datos!"
+#: model:ir.model,name:inusual_custom.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
 
 #. module: inusual_custom
-#: code:addons/inusual_custom/models/account_invoice.py:23
+#: code:addons/inusual_custom/models/account_invoice.py:20
 #, python-format
 msgid "Partner NIF must be setted"
 msgstr "El NIF del cliente debe estar establecido."
 
 #. module: inusual_custom
-#: code:addons/inusual_custom/models/account_invoice.py:19
+#: code:addons/inusual_custom/models/account_invoice.py:16
 #, python-format
 msgid "Partner address must be setted"
-msgstr "La dirección del debe estar establecida."
-
+msgstr "La dirección del cliente debe estar establecida."
