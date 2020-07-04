@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-30 18:09+0000\n"
-"PO-Revision-Date: 2020-03-30 18:09+0000\n"
+"POT-Creation-Date: 2020-07-04 20:15+0000\n"
+"PO-Revision-Date: 2020-07-04 20:15+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -40,6 +40,11 @@ msgstr "<strong>Comentario: </strong>"
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
 msgid "<strong>Comments: </strong><br/>"
 msgstr "<strong>Comentarios: </strong><br/>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_repair_custom
+msgid "<strong>Customer ref:</strong>"
+msgstr "<strong>Ref. cliente:</strong>"
 
 #. module: inusual_custom_documents
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
@@ -83,6 +88,11 @@ msgid "Comments"
 msgstr "Comentarios"
 
 #. module: inusual_custom_documents
+#: model:ir.model.fields,field_description:inusual_custom_documents.field_repair_order__customer_ref
+msgid "Customer ref."
+msgstr "Ref. cliente"
+
+#. module: inusual_custom_documents
 #: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking__amount_discounted
 msgid "Disounted amount"
 msgstr "Importe descontado"
@@ -91,21 +101,6 @@ msgstr "Importe descontado"
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
 msgid "Input picking"
 msgstr "Albarán de entrada"
-
-#. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_account_invoice_line
-msgid "Invoice Line"
-msgstr "Línea de factura"
-
-#. module: inusual_custom_documents
-#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_audio
-msgid "Medicion audio"
-msgstr "Medicion audio"
-
-#. module: inusual_custom_documents
-#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_pantalla
-msgid "Medicion pantalla"
-msgstr "Medicion pantalla"
 
 #. module: inusual_custom_documents
 #: model:ir.model.fields,field_description:inusual_custom_documents.field_mrp_production_notes
@@ -123,26 +118,6 @@ msgid "Picking"
 msgstr "Albarán"
 
 #. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_purchase_order
-msgid "Purchase Order"
-msgstr "Pedido de compra"
-
-#. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_purchase_order_line
-msgid "Purchase Order Line"
-msgstr "Línea pedido de compra"
-
-#. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_sale_order_line
-msgid "Sales Order Line"
-msgstr "Línea pedido de venta"
-
-#. module: inusual_custom_documents
-#: model:ir.model,name:inusual_custom_documents.model_stock_move
-msgid "Stock Move"
-msgstr "Movimiento de existencias"
-
-#. module: inusual_custom_documents
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.inusual_external_layout_footer
 msgid "VAT:"
 msgstr "NIF:"
@@ -150,7 +125,7 @@ msgstr "NIF:"
 #. module: inusual_custom_documents
 #: model:ir.model.fields,field_description:inusual_custom_documents.field_stock_picking__valued
 msgid "Valued"
-msgstr "Valorado"
+msgstr "Albarán valorado"
 
 #. module: inusual_custom_documents
 #: model:ir.model.fields,field_description:inusual_custom_documents.field_account_invoice_line_weight

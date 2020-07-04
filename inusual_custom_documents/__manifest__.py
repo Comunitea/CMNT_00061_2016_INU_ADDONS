@@ -13,6 +13,7 @@
         'mrp',
         'account',
         'purchase_stock',
+        'repair',
         'account_invoice_report_due_list'
     ],
     'contributors': [
@@ -27,7 +28,9 @@
         "views/manufacturing_order.xml",
         "views/stock_picking.xml",
         "views/report_saleorder.xml",
-        'views/account_invoice.xml'
+        'views/account_invoice.xml',
+        'views/report_repair.xml',
+        'views/repair_view.xml'
     ],
     "installable": True
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <template id="report_repair_custom" inherit_id="repair.report_repairorder">
+        <xpath expr="//span[@t-field='line.name']/../.." position="inside">
+            <t t-if="line.lot_id"> (<span t-field="line.lot_id"/>)</t>
+        </xpath>
+        <xpath expr="//div[@t-if='o.guarantee_limit']" position="before">
+            <div t-if="o.customer_ref" class="col-3 bm-2">
+                <strong>Customer ref:</strong>
+                <p t-field="o.customer_ref" class="m-0"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
