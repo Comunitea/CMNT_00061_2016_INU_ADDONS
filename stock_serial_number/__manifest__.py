@@ -11,7 +11,9 @@
     'application': False,
     'installable': True,
     'depends': [
-        'stock',
+        'stock_picking_filter_lot',
+        'repair',
+        'mrp'
     ],
-    'data': [],
+    'data': ['views/stock_view.xml'],
 }
