@@ -7,6 +7,7 @@
         <field name="inherit_id" ref="repair.view_repair_order_form" />
         <field name="arch" type="xml">
            <xpath expr="//field[@name='pricelist_id']" position="after">
+                <field name="parent_analytic_acc_id"/>
                 <field name="project_id"/>
            </xpath>
         </field>

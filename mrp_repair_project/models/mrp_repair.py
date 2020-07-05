@@ -15,6 +15,8 @@ class MrpRepair(models.Model):
     analytic_account_id = fields.Many2one(
         related="project_id.analytic_account_id", store=True,
         readonly=True)
+    parent_analytic_acc_id = fields.Many2one("account.analytic.account",
+                                             "Parent Account")
 
     @api.multi
     def _prepare_project_vals(self):
@@ -65,6 +67,9 @@ Quantity to Repair: {3}""".format(
                 project_vals = repair._prepare_project_vals()
                 project = project_obj.create(project_vals)
                 repair.project_id = project.id
+                if repair.parent_analytic_acc_id:
+                    repair.analytic_account_id.parent_id = \
+                        repair.parent_analytic_acc_id.id
         return result
 
     @api.multi

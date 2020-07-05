@@ -25,6 +25,8 @@ class MrpProduction(models.Model):
         compute='_compute_project_id',
         store=True, readonly=True
     )
+    parent_analytic_acc_id = fields.Many2one("account.analytic.account",
+                                             "Parent Account")
 
     @api.model
     def _prepare_project_vals(self, production):
@@ -110,6 +112,9 @@ Workorder: {8}""".format(
                 project_vals = self._prepare_project_vals(production)
                 project = project_obj.create(project_vals)
                 production.analytic_account_id = project.analytic_account_id.id
+                if production.parent_analytic_acc_id:
+                    production.analytic_account_id.parent_id = \
+                        production.parent_analytic_acc_id.id
             if not production.routing_id:
                 task_domain = [('mrp_production_id', '=', production.id),
                                ('workorder_id', '=', False)]
