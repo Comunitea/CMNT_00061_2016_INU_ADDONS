@@ -9,7 +9,8 @@
     'license': 'AGPL-3',
     'depends': [
         'account',
-        'sale'
+        'sale',
+        'hr_expense'
     ],
     'contributors': [
         "Comunitea: ",
@@ -19,6 +20,7 @@
     "data": [
         "views/res_partner_view.xml",
         "views/sale_order_view.xml",
+        'views/hr_expense_view.xml',
     ],
     "installable": True
 }
