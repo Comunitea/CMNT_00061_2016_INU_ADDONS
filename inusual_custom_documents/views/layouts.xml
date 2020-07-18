@@ -9,7 +9,7 @@
                 <attribute name="style">font-size:12px;</attribute>
             </xpath>
             <xpath expr="//div[hasclass('o_report_layout_standard')]" position="attributes">
-                <attribute name="style">font-size: 11px;</attribute>
+                <attribute name="style">font-size: 12px;</attribute>
             </xpath>
             <xpath expr="//t[@t-call='web.address_layout']" position="after">
                 <br/>
