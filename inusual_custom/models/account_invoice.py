@@ -1,7 +1,7 @@
 # © 2017 Comunitea
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import models, api, _, exceptions
+from odoo import models, fields, api, _, exceptions
 
 
 class AccountInvoice(models.Model):
@@ -25,3 +25,9 @@ class AccountInvoice(models.Model):
         self._check_invoice_validate()
         res = super().action_invoice_open()
         return res
+
+
+class AccountBankStatementLine(models.Model):
+    _inherit = "account.bank.statement.line"
+
+    date = fields.Date(default=fields.Date.context_today)
