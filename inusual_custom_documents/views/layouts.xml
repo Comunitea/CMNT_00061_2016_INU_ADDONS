@@ -15,8 +15,7 @@
                 <br/>
             </xpath>
             <xpath expr="//div[@t-field='company.report_header']" position="attributes">
-                <attribute name="t-if">report_tittle</attribute>
-                <attribute name="t-esc">report_tittle</attribute>
+                <attribute name="t-esc">report_tittle or ""</attribute>
                 <attribute name="t-field"></attribute>
             </xpath>
             <xpath expr="//div[hasclass('footer')]//ul[hasclass('list-inline')]" position="attributes">
@@ -24,6 +23,14 @@
             </xpath>
             <xpath expr="//div[@t-field='company.partner_id']" position="after">
                 <p t-if="company.partner_id.vat" style="border-bottom: 1px solid black;">VAT: <span t-field="company.partner_id.vat"/></p>
+            </xpath>
+            <xpath expr="//div[@name='moto']" position="attributes">
+                <attribute name="class">col-6 text-right</attribute>
+            </xpath>
+            <xpath expr="//div[@name='moto']" position="after">
+                <div class="col-3 text-right">
+                    <img src="/inusual_custom_documents/static/description/logo_iso.png" style="max-height: 70px;" />
+                </div>
             </xpath>
         </template>
 
