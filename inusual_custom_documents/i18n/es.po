@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-04 20:15+0000\n"
-"PO-Revision-Date: 2020-07-04 20:15+0000\n"
+"POT-Creation-Date: 2020-12-18 13:13+0000\n"
+"PO-Revision-Date: 2020-12-18 13:13+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -19,8 +19,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
 msgid "<br/>\n"
 "                <strong>Intrastat:</strong>"
-msgstr "<br/>\n"
-"                <strong>Intrastat:</strong>"
+msgstr ""
 
 #. module: inusual_custom_documents
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_mrporder_inherit
@@ -47,6 +46,11 @@ msgid "<strong>Customer ref:</strong>"
 msgstr "<strong>Ref. cliente:</strong>"
 
 #. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+msgid "<strong>Description:</strong>"
+msgstr "<strong>Descripción:</strong>"
+
+#. module: inusual_custom_documents
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
 msgid "<strong>Discounted:</strong>"
 msgstr "<strong>Descontado:</strong>"
@@ -61,6 +65,11 @@ msgstr "<strong>Importe bruto:</strong>"
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_sale_order_custom
 msgid "<strong>Payment Term: </strong>"
 msgstr "<strong>Plazo de pago: </strong>"
+
+#. module: inusual_custom_documents
+#: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
+msgid "<strong>Source:</strong>"
+msgstr "<strong>Origen:</strong>"
 
 #. module: inusual_custom_documents
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.report_invoice_document_custom
@@ -101,6 +110,16 @@ msgstr "Importe descontado"
 #: model_terms:ir.ui.view,arch_db:inusual_custom_documents.valued_report_picking_custom
 msgid "Input picking"
 msgstr "Albarán de entrada"
+
+#. module: inusual_custom_documents
+#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_audio
+msgid "Medicion audio"
+msgstr ""
+
+#. module: inusual_custom_documents
+#: model:ir.actions.report,name:inusual_custom_documents.action_report_med_pantalla
+msgid "Medicion pantalla"
+msgstr ""
 
 #. module: inusual_custom_documents
 #: model:ir.model.fields,field_description:inusual_custom_documents.field_mrp_production_notes
