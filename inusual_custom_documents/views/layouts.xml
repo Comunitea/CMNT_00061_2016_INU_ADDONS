@@ -5,7 +5,7 @@
              <xpath expr="//div[hasclass('footer')]" position="attributes">
                 <attribute name="style">font-size:9px;</attribute>
             </xpath>
-            <xpath expr="//div[hasclass('header')]" position="attributes">
+            <xpath expr="//div[@name='company_address']" position="attributes">
                 <attribute name="style">font-size:12px;</attribute>
             </xpath>
             <xpath expr="//div[hasclass('o_report_layout_standard')]" position="attributes">
