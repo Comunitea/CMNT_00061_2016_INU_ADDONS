@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <report
+        id="custom_label_report"
+        model="product.template"
+        string="Inusual Label"
+        name="custom_label_inusual.custom_label_template"
+        file="custom_label_inusual.custom_label_template"
+        report_type="qweb-pdf"
+        attachment_use="True"
+        multi="False"
+        paperformat="paperformat_custom_label_inusual"
+    />
+        />
+
+    <template id="custom_label_inusual.custom_label_template">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="custom_label_inusual.custom_label_individual_template" />
+            </t>
+        </t>
+    </template>
+
+    <template id="custom_label_inusual.custom_label_individual_template">
+        <div
+            class="page"
+            style="page-break-after: always; font-size: 17px; text-transform: uppercase;"
+        >
+            <div class="row" style="border-bottom: 1px solid black;">
+                <div class="col-6 text-center">
+                    <img src="/custom_label_inusual/static/img/inusual.png"
+                        class="img-fluid" style="max-height:30px;max-width:100%;"
+                        align="center"/>
+                </div>
+                <div class="col-6 text-center mb-2">
+                    <img alt="barcode" t-if="doc.default_code"
+                        t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', doc.default_code, 600, 75)"
+                        style="max-height:50pt;max-width:100%;" align="center"/>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col-12 text-center">
+                    <span
+                        t-if="doc.default_code"
+                        t-field="doc.default_code"
+                        style="font-size: 85px;"
+                    />
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <span
+                        t-if="doc.display_name"
+                        t-field="doc.display_name"
+                        style="font-size: 18px;"
+                    />
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+
+</odoo>
