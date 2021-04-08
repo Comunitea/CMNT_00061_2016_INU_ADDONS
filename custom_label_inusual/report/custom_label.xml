@@ -12,7 +12,6 @@
         multi="False"
         paperformat="paperformat_custom_label_inusual"
     />
-        />
 
     <template id="custom_label_inusual.custom_label_template">
         <t t-call="web.basic_layout">
@@ -25,7 +24,7 @@
     <template id="custom_label_inusual.custom_label_individual_template">
         <div
             class="page"
-            style="page-break-after: always; font-size: 17px; text-transform: uppercase;"
+            style="page-break-after: always; font-size: 17px; text-transform: uppercase; font-family: 'Roboto';"
         >
             <div class="row" style="border-bottom: 1px solid black;">
                 <div class="col-6 text-center">
@@ -41,23 +40,19 @@
             </div>
 
             <div class="row mt-2">
-                <div class="col-12 text-center">
-                    <span
-                        t-if="doc.default_code"
-                        t-field="doc.default_code"
-                        style="font-size: 85px;"
-                    />
-                </div>
+                <span
+                    t-if="doc.default_code"
+                    t-field="doc.default_code"
+                    style="font-size: 90px; letter-spacing: 5px; width: 100%; display: block; text-align: center;"
+                />
             </div>
 
             <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <span
-                        t-if="doc.display_name"
-                        t-field="doc.display_name"
-                        style="font-size: 18px;"
-                    />
-                </div>
+                <span
+                    t-if="doc.display_name"
+                    t-esc="doc.display_name[:190]"
+                    style="font-size: 20px; width: 100%; text-align: justify; display: block;"
+                />
             </div>
 
         </div>
