@@ -59,7 +59,7 @@
             <div class="row mt-4">
                 <span
                     t-if="doc.display_name"
-                    t-esc="doc.display_name[:190]"
+                    t-esc="doc.display_name[:210]"
                     style="font-size: 20px; width: 100%; text-align: justify; display: block;"
                 />
             </div>
