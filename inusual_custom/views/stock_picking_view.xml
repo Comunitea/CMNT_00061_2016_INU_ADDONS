@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_picking_shipment_data_form" model="ir.ui.view">
+        <field name="name">delivery.stock.picking_withcarrier.form.view</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="delivery.view_picking_withcarrier_out_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='tracking']" position="after">
+                <field name="shipment_date"/>
+                <field name="delivered"/>
+                <field name="delivery_date"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="vpicktree_shipment_data_form" model="ir.ui.view">
+        <field name="name">stock.picking.tree</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.vpicktree"/>
+        <field name="arch" type="xml">
+            <field name="state" position="after">
+                <field name="shipment_date"/>
+                <field name="delivered"/>
+                <field name="delivery_date"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_picking_internal_search" model="ir.ui.view">
+        <field name="name">stock.picking.internal.search</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+        <field name="arch" type="xml">
+            <filter name="late" position="after">
+                <separator/>
+                <filter name="not_delivered" string="Not delivered" domain="[('shipment_date','!=', False), ('delivered', '!=', True)]"/>
+            </filter>
+        </field>
+    </record>
+
+</odoo>
