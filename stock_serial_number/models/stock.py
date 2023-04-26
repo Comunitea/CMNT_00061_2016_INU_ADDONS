@@ -51,8 +51,10 @@ class StockMove(models.Model):
 
     def action_show_details(self):
         res = super().action_show_details()
-        res['context']['show_source_location'] = False
-        res['context']['show_destination_location'] = False
+    #    res['context']['show_source_location'] = False
+    #    res['context']['show_destination_location'] = False
+        picking_type_id = self.picking_type_id or self.picking_id.picking_type_id
+        res['context']['show_lots_text']= self.has_tracking != 'none' and picking_type_id.use_create_lots and self.state != 'done' and not self.origin_returned_move_id.id,
         return res
 
 
