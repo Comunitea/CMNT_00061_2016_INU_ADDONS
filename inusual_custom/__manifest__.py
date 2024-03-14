@@ -22,7 +22,9 @@
         "views/res_partner_view.xml",
         "views/sale_order_view.xml",
         'views/hr_expense_view.xml',
-        "views/stock_picking_view.xml"
+        "views/stock_picking_view.xml",
+        "views/res_config_settings.xml",
+        "data/mail.xml"
     ],
     "installable": True
 }
